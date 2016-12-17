@@ -4,8 +4,8 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 
 gulp.task("typescripts", function() {
-    return gulp.src("**.ts")
-           .pipe(ts({}))
+    return gulp.src(["**.ts", "**.tsx"])
+           .pipe(ts({jsx:"react"}))
            .pipe(gulp.dest('./ts'));
 });
 
